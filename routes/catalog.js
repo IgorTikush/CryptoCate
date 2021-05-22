@@ -57,3 +57,5 @@ router.get('/coin/:id', coin_controller.coin_detail)
 
 // show all coins
 router.get('/coins', coin_controller.coin_list)
+
+module.exports = router
