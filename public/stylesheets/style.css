@@ -1,8 +1,91 @@
 body {
-  padding: 50px;
+  background-color: #111111;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 1.25em;
+  color:white;
+}
+
+nav {
+  text-align: center;
+  font-size: 35px;
+}
+
+main {
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0px -5px 43px 1px rgba(34, 60, 80, 0.2);
+  width: 300px;
+  height: 250px;
+  text-align: center;
+  transition: 750ms;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 a {
-  color: #00B7FF;
+  color: inherit;
+  text-decoration: none;
+
+}
+
+.form{
+  max-width: 40em;
+  margin: 0 auto;
+  position: relative;
+  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.form, label, input, textarea, button  {
+  padding: 0.75em 1em;
+  border: none;
+  display: block;
+  border: none;
+}
+
+label {
+  color: white;
+  padding-top: 0;
+  padding-left: 0;
+ 
+}
+
+input, textarea {
+  line-height: normal;
+  width: 100%;
+  box-sizing: border-box;
+  background: #222222; 
+  color: white;
+  outline: none;
+  font-size: 20px;
+}
+
+.field {
+  width: 100%;
+  margin: 0 0 1.5em 0;
+}
+
+button {
+  line-height: normal;
+  cursor: pointer;
+  background: #222222; 
+  color: white;
+  font-weight: bold;
+  width: auto;
+  margin: 0 auto;
+  font-weight: bold;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-size: 25px;
 }

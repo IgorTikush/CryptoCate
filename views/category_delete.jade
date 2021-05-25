@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1 #{title} #{category.name}
+    -console.log(coins)
+    -if (coins.length)
+        p Delete this coins before deleting the category
+
+        h4 Coins
+        dl
+        - each coin in coins
+            dt
+                a(href=coin.url) #{coin.name}
+            dd  #{coin.description}
+    -else
+        p Do you really want to delete the category?
+        form(action='', method='POST')
+            input(type='hidden', name='categoryid', required='true', value=category._id)
+            button Delete
+
+

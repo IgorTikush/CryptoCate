@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  main
+    -category_list.forEach((category) => {
+      a(href=category.url)
+        console.lof(category.url) 
+        .card
+          h2= category.name 
+          p= category.description
+          
+    -})

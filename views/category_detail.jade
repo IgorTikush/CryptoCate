@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    p #{category.name}
+    p #{category.description}
+    h4 Coins
+    dt
+    -each coin in coins
+        dt
+            a(href=coin.url) #{coin.name}
+        dd  #{coin.description}
+    a(href=category.url + '/update')
+        btn Update
+    a(href=category.url + '/delete')
+        brn Delete
