@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    form.form(action='', method='POST')
+        .field
+            label(for='name') Name:
+            input(type='text', placeholder='Name of the coin', name='name', value=(coin === undefined ? '' : coin.name))
+        .field
+            label(for='description') Description:
+            textarea(placeholder="Description of the crypto",name="description",  cols="30",rows="10", required='true') #{coin === undefined ? '' : coin.description}
+        .field
+            label(for='Category') Category:
+            select(type="select", placeholder='Select catrgory', name='category', required='true')
+                for category in categories
+                    if coin
+                        option(value=category._id selected=(category._id.toString()===coin.category._id.toString() ? 'selected' : false )) #{category.name}
+                    else
+                        option(value=category._id) #{category.name}
+
+    
+        button(type='submit') #{action}

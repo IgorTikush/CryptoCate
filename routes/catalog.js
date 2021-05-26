@@ -44,13 +44,13 @@ router.post('/coin/create', coin_controller.coin_create_post)
 router.get('/coin/:id/delete', coin_controller.coin_delete_get)
 
 //POST delete coin
-router.post('/coin/:id/delete', coin_controller.coin_delete_post)
+router.post('/coin/:id', coin_controller.coin_delete_post)
 
 //GET update coin
 router.get('/coin/:id/update', coin_controller.coin_update_get)
 
 //POST update coin
-router.get('/coin/:id/update', coin_controller.coin_update_post)
+router.post('/coin/:id/update', coin_controller.coin_update_post)
 
 // show 1 coin
 router.get('/coin/:id', coin_controller.coin_detail)

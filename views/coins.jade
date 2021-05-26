@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  main
+    -coins.forEach((coin) => {
+      a(href=coin.url)
+        console.lof(coin.url) 
+        .card
+          h2= coin.name 
+          p= coin.description
+          
+    -})

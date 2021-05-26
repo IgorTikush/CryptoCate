@@ -78,7 +78,7 @@ exports.category_update_post = [
             return
         } else {
             //Data from form is valid
-            Category.findByIdAndUpdate(req.params.id, category, {}, function (err,category) {
+            Category.findByIdAndUpdate(req.params.id, category, {}, function (err) {
                 if(err) { return next(err); }
                 //Success
                 res.redirect('/catalog')

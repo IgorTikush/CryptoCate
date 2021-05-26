@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    p #{coin.name}
+    p #{coin.description}
+    p #{coin.coin}
+    a(href=coin.url + '/update')
+        button Update
+    form(action='' method='POST')
+        button Delete
+    a(href='/')
+        button Back
