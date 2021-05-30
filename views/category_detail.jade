@@ -4,14 +4,19 @@ block content
     
     h1 #{category.name}
     h2 #{category.description}
+    if category.image 
+        img(src=category.image)
     //- h4 Coins
     //- dt
     main
         -each coin in coins
             a(href=coin.url)
                 .card
+                    if coin.image 
+                        img(src=coin.image)
+
                     p #{coin.name}
-                    p #{coin.description}
+                    .description #{coin.description}
             
         .card
             a(href='/catalog/coin/create')

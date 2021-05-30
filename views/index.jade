@@ -4,7 +4,9 @@ block content
   main
     -category_list.forEach((category) => {
       a(href=category.url) 
-        .card
+        .card.indexCard
+          if category.image 
+            img(src=category.image)
           h2= category.name 
           p= category.description
           

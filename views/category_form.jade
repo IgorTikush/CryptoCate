@@ -6,6 +6,9 @@ block content
             label(for='name') Name:
             input(type='text', placeholder='Name of the category', name='name', value=(category === undefined ? '' : category.name))
         .field
+            label(for='image') Image link:
+            input(type='text', placeholder='https://pornhub/boobs.jpeg', name='image', value=(category === undefined ? '' : category.image))
+        .field
             label(for='description') Description:
             textarea(placeholder="Description of the crypto",name="description",  cols="30",rows="10") #{category === undefined ? '' : category.description}
     

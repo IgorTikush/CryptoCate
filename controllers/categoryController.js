@@ -20,6 +20,7 @@ exports.category_create_post = [
     //Validate and sanitize all fields
     body('name', 'Name is required').trim().isLength({min: 3}).escape(),
     body('description', 'Description is required').trim().isLength({min: 10}).escape(),
+    body('image').trim().escape(),
     //After validation continue
     (req, res, next) => {
         //Extract validation errors
@@ -28,6 +29,7 @@ exports.category_create_post = [
         //Create new category instance
         let category = new Category({
             name: req.body.name,
+            image: req.body.image,
             description: req.body.description
         })
         if(!errors.isEmpty()) {
@@ -60,6 +62,7 @@ exports.category_update_post = [
     //Validate and sanitize all fields
     body('name', 'Name is required').trim().isLength({min: 3}).escape(),
     body('description', 'Description is required').trim().isLength({min: 10}).escape(),
+    body('image').trim().escape(),
     //After validation continue
     (req, res, next) => {
         //Extract validation errors
@@ -69,6 +72,7 @@ exports.category_update_post = [
         let category = new Category({
             name: req.body.name,
             description: req.body.description,
+            image: req.body.image,
             _id: req.params.id
         })
         if(!errors.isEmpty()) {

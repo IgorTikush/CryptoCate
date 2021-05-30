@@ -6,7 +6,8 @@ let CoinSchema = new Schema(
     {
         name: {type: String, required: true},
         description: {type: String},
-        category: {type: Schema.Types.ObjectId, ref: 'Category', required: true}
+        category: {type: Schema.Types.ObjectId, ref: 'Category', required: true},
+        image: {type: String, required: false, default:''}
     }
 )
 

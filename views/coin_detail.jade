@@ -4,6 +4,8 @@ block content
     p #{coin.name}
     p #{coin.description}
     p #{coin.coin}
+    if coin.image 
+        img(src=coin.image)
     .buttons
         a(href=coin.url + '/update')
             button Update

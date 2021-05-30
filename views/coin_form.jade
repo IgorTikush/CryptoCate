@@ -9,6 +9,9 @@ block content
             label(for='description') Description:
             textarea(placeholder="Description of the crypto",name="description",  cols="30",rows="10", required='true') #{coin === undefined ? '' : coin.description}
         .field
+            label(for='image') Image link:
+            input(type='text', placeholder='https://pornhub/boobs.jpeg', name='image', value=(coin === undefined ? '' : coin.image))
+        .field
             label(for='Category') Category:
             select(type="select", placeholder='Select catrgory', name='category', required='true')
                 for category in categories
@@ -16,6 +19,7 @@ block content
                         option(value=category._id selected=(category._id.toString()===coin.category._id.toString() ? 'selected' : false )) #{category.name}
                     else
                         option(value=category._id) #{category.name}
+        
 
     
         button(type='submit') #{action}

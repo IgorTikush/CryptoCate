@@ -6,6 +6,8 @@ block content
       a(href=coin.url)
         console.lof(coin.url) 
         .card
+          if coin.image 
+            img(src=coin.image)
           h2= coin.name 
           p= coin.description
           

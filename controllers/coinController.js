@@ -24,12 +24,14 @@ exports.coin_create_post = [
     //Validate and sanitize all fields
     body('name', 'Name is required').trim().isLength({min: 3}).escape(),
     body('description', 'Description is required').trim().isLength({min: 10}).escape(),
+    body('image').trim().escape(),
     //After validation continue
     (req, res, next) => {
         const errors = validationResult(req)
         let coin = new Coin({
             name: req.body.name,
             description: req.body.description,
+            image: req.body.image,
             category: req.body.category
         })
         if(!errors.isEmpty()) {
@@ -77,6 +79,7 @@ exports.coin_update_post = [
        //Validate and sanitize all fields
        body('name', 'Name is required').trim().isLength({min: 3}).escape(),
        body('description', 'Description is required').trim().isLength({min: 10}).escape(),
+       body('image').trim(),
        //After validation continue
        (req, res, next) => {
            const errors = validationResult(req)
@@ -84,6 +87,7 @@ exports.coin_update_post = [
                name: req.body.name,
                description: req.body.description,
                category: req.body.category,
+               image: req.body.image,
                _id: req.params.id
            })
            if(!errors.isEmpty()) {
@@ -103,7 +107,7 @@ exports.coin_update_post = [
                //There are no errors
                Coin.findByIdAndUpdate(req.params.id, coin, {},  function(err){
                    if(err){return next(err)}
-                   res.redirect('/')
+                   res.redirect('/catalog/category/' + coin.category)
                })
            }
    

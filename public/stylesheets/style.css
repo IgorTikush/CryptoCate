@@ -28,6 +28,18 @@ main {
   background-color: #222222;
   margin-bottom: 20px;
   padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.indexCard {
+  overflow: unset;
+  white-space:normal;
+}
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+ 
 }
 
 .card:hover {
@@ -100,4 +112,9 @@ button {
   width: max-content;
   align-content: center;
   margin: 0 auto;
+}
+img {
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
 }
