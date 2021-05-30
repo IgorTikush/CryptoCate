@@ -13,7 +13,7 @@ exports.index = function(req, res, next) {
         })
 }
 exports.category_create_get = function(req,res, next) {
-    res.render('category_form', {title: 'Create category'})
+    res.render('category_form', {title: 'Create category', action: 'Create'})
 }
 
 exports.category_create_post = [

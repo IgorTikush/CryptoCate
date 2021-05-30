@@ -4,9 +4,10 @@ block content
     p #{coin.name}
     p #{coin.description}
     p #{coin.coin}
-    a(href=coin.url + '/update')
-        button Update
-    form(action='' method='POST')
-        button Delete
-    a(href='/')
-        button Back
+    .buttons
+        a(href=coin.url + '/update')
+            button Update
+        form(action='' method='POST')
+            button Delete
+        a(href='/catalog/category/#{coin.category}')
+            button back

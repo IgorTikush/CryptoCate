@@ -3,6 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
   color:white;
+  margin: 50px;
 }
 
 nav {
@@ -21,9 +22,12 @@ main {
   border-radius: 8px;
   box-shadow: 0px -5px 43px 1px rgba(34, 60, 80, 0.2);
   width: 300px;
-  height: 250px;
+  height: 300px;
   text-align: center;
   transition: 750ms;
+  background-color: #222222;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .card:hover {
@@ -82,10 +86,18 @@ button {
   background: #222222; 
   color: white;
   font-weight: bold;
-  width: auto;
-  margin: 0 auto;
   font-weight: bold;
   padding-left: 2em;
   padding-right: 2em;
   font-size: 25px;
+  width: 200px;
+  margin: 10px 0; 
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  align-content: center;
+  margin: 0 auto;
 }

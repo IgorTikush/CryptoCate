@@ -1,17 +1,25 @@
 extends layout
 
 block content
-    p #{category.name}
-    p #{category.description}
-    h4 Coins
-    dt
-    -each coin in coins
-        dt
-            a(href=coin.url) #{coin.name}
-        dd  #{coin.description}
-    a(href=category.url + '/update')
-        button Update
-    a(href=category.url + '/delete')
-        button Delete
-    a(href='/')
-        button Back
+    
+    h1 #{category.name}
+    h2 #{category.description}
+    //- h4 Coins
+    //- dt
+    main
+        -each coin in coins
+            a(href=coin.url)
+                .card
+                    p #{coin.name}
+                    p #{coin.description}
+            
+        .card
+            a(href='/catalog/coin/create')
+                include ../public/images/plus.svg
+    .buttons
+        a(href=category.url + '/update')
+            button Update
+        a(href=category.url + '/delete')
+            button Delete
+        a(href='/')
+            button Back
