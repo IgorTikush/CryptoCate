@@ -31,6 +31,7 @@ main {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  animation-play-state: paused;
 }
 .indexCard {
   overflow: unset;
